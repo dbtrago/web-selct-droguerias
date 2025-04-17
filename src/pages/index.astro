@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Sistemas POS para Droguerías" />
+		<meta name="author" content="Dani" />
+		<meta name="keywords" content="Sistemas POS, Droguerías, Software" />
+		<link rel="icon" type="image/webp" href="/src/assets/Favicon.webp" />
+		<title>DROGUERIAS - SISTEMAS POS</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			body {
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				position: relative;
+			}
+
+			/* Fondo principal */
+			.background {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -2;
+				overflow: hidden;
+			}
+
+			/* Imagen de fondo */
+			.background img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			/* Capa oscura encima de la imagen */
+			.background::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: black;
+				opacity: 0.85; /* Puedes ajustar este valor */
+				z-index: 1;
+			}
+
+			/* Overlay para mejorar legibilidad */
+			.overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.3);
+				z-index: -1;
+			}
+
+			/* Header con degradado */
+			header {
+				position: relative;
+				z-index: 1;
+			}
+
+			.header-gradient {
+				background-image: linear-gradient(
+					to bottom,
+					rgba(0, 0, 0, 0.8),
+					transparent
+				);
+				padding: 1rem 0;
+			}
+
+			header h1 {
+				color: white;
+				text-align: center;
+				font-size: 1.5rem;
+				font-weight: 500;
+			}
+
+			/* Contenido principal */
+			main {
+				flex-grow: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 2rem 1rem;
+				position: relative;
+				z-index: 1;
+			}
+
+			.card-container {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 1.5rem;
+				max-width: 1000px;
+				width: 100%;
+			}
+
+			@media (min-width: 768px) {
+				.card-container {
+					grid-template-columns: 1fr 1fr;
+				}
+
+				header h1 {
+					font-size: 1.875rem;
+				}
+			}
+
+			.card {
+				background-color: rgba(255, 255, 255, 0.9);
+				border-radius: 0.5rem;
+				overflow: hidden;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				transition: all 0.3s ease;
+				backdrop-filter: blur(4px);
+				transform: translateY(0);
+			}
+
+			.card:hover {
+				box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+				transform: translateY(-5px) scale(1.02);
+				background-color: rgba(255, 255, 255, 1);
+			}
+
+			.card-image {
+				position: relative;
+				height: 16rem;
+				width: 100%;
+			}
+
+			.card-image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.card-content {
+				padding: 1rem;
+			}
+
+			.card-content h2 {
+				text-align: center;
+				font-size: 1.25rem;
+				font-weight: 600;
+				padding: 0.5rem 0;
+			}
+
+			/* Footer con degradado */
+			footer {
+				position: relative;
+				z-index: 1;
+			}
+
+			.footer-gradient {
+				background-image: linear-gradient(
+					to top,
+					rgba(0, 0, 0, 0.8),
+					transparent
+				);
+				padding: 1rem 0;
+			}
+
+			footer p {
+				color: white;
+				text-align: center;
+			}
+
+			.container {
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 1rem;
+			}
+
+			.footer-link {
+				color: #4fc3f7;
+				text-decoration: none;
+				margin-left: 0.3rem;
+				transition: color 0.3s ease;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Fondo principal -->
+		<div class="background">
+			<img
+				src="https://png.pngtree.com/png-vector/20221107/ourlarge/pngtree-medicine-doodle-seamless-pattern-vector-eps-illustrations-medical-kit-concept-dropper-vector-png-image_40451840.jpg"
+				alt="Background"
+			/>
+		</div>
+		<div class="overlay"></div>
+
+		<!-- Header con degradado -->
+		<header>
+			<div class="header-gradient">
+				<div class="container">
+					<h1>SISTEMAS POS - DROGUERIAS</h1>
+				</div>
+			</div>
+		</header>
+
+		<!-- Contenido principal -->
+		<main>
+			<div class="card-container">
+				<!-- Drogueria 1 Card -->
+				<div class="card" onclick="window.location.href='https://ng-drogueria-1.web.app/login'" style="cursor: pointer;">
+					<div class="card-image">
+						<img
+							src="src/assets/Fondo-La-Fachada.webp"
+							alt="Drogueria 1"
+						/>
+					</div>
+					<div class="card-content">
+						<h2>Droguería Quintas de La Fachada</h2>
+					</div>
+				</div>
+
+				<!-- Drogueria 2 Card -->
+				<div class="card" onclick="window.location.href='https://ng-drogueria-1.web.app/login'" style="cursor: pointer;">
+					<div class="card-image">
+						<img
+							src="src/assets/Fondo-La-Fachada.webp"
+							alt="Drogueria 2"
+						/>
+					</div>
+					<div class="card-content">
+						<h2>Drogueria La Quimbayita</h2>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Footer con degradado -->
+		<footer>
+			<div class="footer-gradient">
+				<div class="container footer-content">
+					<p>
+						code by <a
+							href="https://danielbuitrago.netlify.app/"
+							rel="noopener noreferrer"
+							target="_blank"
+							class="footer-link">Dani</a
+						>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
